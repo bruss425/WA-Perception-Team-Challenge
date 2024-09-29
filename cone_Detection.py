@@ -34,13 +34,12 @@ mask = cv2.inRange(hsv_image, lower_orange, upper_orange)
 # getting our contours back, only need that value
 contours, irrelevent = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
-# Loop through the contours and draw boxes 
 
-# setting a min area for the boxes so it disregards the little spec boxes 
-# i found that the smallest 2 cones were around 7 x 10 so i did min area of 50 (little smaller)
 
 
 def getCenters(contours):
+    # setting a min area for the boxes so it disregards the little spec boxes 
+    # i found that the smallest 2 cones were around 7 x 10 so i did min area of 50 (little smaller)
     min_area = 50
     # get centers for lefter and right blocks 
     left_centers = [] 
